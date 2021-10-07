@@ -44,63 +44,65 @@
 
    
   
-    <body>
-        <input type="button" onClick="sendLinkCustom();" value="Custom"/>
-        <input type="button" onClick="sendLinkDefault();" value="Default"/>
-    
-    <script type="text/javascript">
-        function sendLinkCustom() {
-            Kakao.init("[96f67dd6c088728e30743d7db32a6789]");
-            Kakao.Link.sendCustom({
-                templateId: [63047]
-            });
-        }
-    </script>
-    
-    <script>
-    try {
-      function sendLinkDefault() {
-        Kakao.init('[96f67dd6c088728e30743d7db32a6789]')
-        Kakao.Link.sendDefault({
-          objectType: 'feed',
+<a id="kakao-link-btn">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
+      </a>
+      <script type='text/javascript'>
+      
+        Kakao.init('96f67dd6c088728e30743d7db32a6789');
+      
+          //기본 버튼 공유하기
+          Kakao.Link.createDefaultButton({
+      
+          /* 버튼을 먹일 곳*/
+              container : '#kakao-link-btn',
+      
+          /* 여기서 타입은 feed로 고정 */
+              objectType: 'feed',
+      
+          /* 카드형 안에 들어갈 내용들 */
           content: {
-            title: '딸기 치즈 케익',
-            description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
-            imageUrl:
-              'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+      
+            /* 당연히 제목 */
+            title: '바나나!!!~~~~~',
+      
+            /* 당연히 설명 */
+            description: '#내가 #테스트 #하는 #거야',
+      
+            /* 사진 주소 */
+            imageUrl: 'https://images2.alphacoders.com/507/thumb-1920-507980.png',
+      
+            /* 사진을 눌렀을 때 이동 페이지(다르게 줄 수 있음) */
             link: {
               mobileWebUrl: 'https://developers.kakao.com',
-              webUrl: 'https://developers.kakao.com',
-            },
+              webUrl: 'https://kimblueberry.github.io/'
+            }
           },
+          /* 각종(좋아요, 댓글수, 공유수, 열어본수, 구독수) */
           social: {
-            likeCount: 286,
-            commentCount: 45,
-            sharedCount: 845,
+            likeCount: 1,
+            commentCount: 2,
+            sharedCount: 3,
+            viewCount : 10000,
+            subscriberCount : 1231241,
           },
+      
+          /* 버튼 생성 */
           buttons: [
             {
+              /* 버튼 이름 */
               title: '웹으로 보기',
+      
+              /* 버튼 링크 */
               link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                webUrl: 'https://developers.kakao.com',
-              },
+                mobileWebUrl: 'https://kimblueberry.github.io/',
+                webUrl: 'https://kimblueberry.github.io/'
+              }
             },
-            {
-              title: '앱으로 보기',
-              link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                webUrl: 'https://developers.kakao.com',
-              },
-            },
-          ],
-        })
-      }
-    ; window.kakaoDemoCallback && window.kakaoDemoCallback() }
-    catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
-    </script>
-       
-    </body>
+          ]
+          });
+          //]]>
+      </script>
     </html>
 
     <div class="result">
