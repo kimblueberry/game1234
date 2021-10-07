@@ -7,6 +7,7 @@
     <script data-ad-client="ca-pub-9560279825631130" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title>오징어게임 테스트</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -40,6 +41,67 @@
             <button class="next" style="font-family: bm11; font-size: 25px;" >다음</button>
         </div>
     </div>
+
+   
+  
+    <body>
+        <input type="button" onClick="sendLinkCustom();" value="Custom"/>
+        <input type="button" onClick="sendLinkDefault();" value="Default"/>
+    
+    <script type="text/javascript">
+        function sendLinkCustom() {
+            Kakao.init("[96f67dd6c088728e30743d7db32a6789]");
+            Kakao.Link.sendCustom({
+                templateId: [63047]
+            });
+        }
+    </script>
+    
+    <script>
+    try {
+      function sendLinkDefault() {
+        Kakao.init('[96f67dd6c088728e30743d7db32a6789]')
+        Kakao.Link.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: '딸기 치즈 케익',
+            description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+            imageUrl:
+              'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+            link: {
+              mobileWebUrl: 'https://developers.kakao.com',
+              webUrl: 'https://developers.kakao.com',
+            },
+          },
+          social: {
+            likeCount: 286,
+            commentCount: 45,
+            sharedCount: 845,
+          },
+          buttons: [
+            {
+              title: '웹으로 보기',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com',
+              },
+            },
+            {
+              title: '앱으로 보기',
+              link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                webUrl: 'https://developers.kakao.com',
+              },
+            },
+          ],
+        })
+      }
+    ; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+    catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+    </script>
+       
+    </body>
+    </html>
 
     <div class="result">
 
